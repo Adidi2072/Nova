@@ -1,0 +1,884 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<body style="background-image: url('fond.jpg');
+             background-size: cover;
+             background-position: center;
+             background-repeat: no-repeat;
+             background-attachment: fixed;">
+
+<title>Nova — Langage de programmation</title>
+
+<style>
+/* ================================
+NOVA WEBSITE
+================================ */
+
+:root {
+--background: #f5f7ff;
+--surface: #ffffff;
+--text: #172033;
+--secondary: #68738a;
+--primary: #635bff;
+--primary-dark: #4f46e5;
+--border: #e2e6f0;
+--dark: #111522;
+}
+
+* {
+box-sizing: border-box;
+margin: 0;
+padding: 0;
+}
+
+html {
+scroll-behavior: smooth;
+}
+
+body {
+font-family:
+Inter,
+system-ui,
+-apple-system,
+BlinkMacSystemFont,
+"Segoe UI",
+sans-serif;
+
+background: var(--background);
+color: var(--text);
+line-height: 1.6;
+}
+
+a {
+text-decoration: none;
+color: inherit;
+}
+
+.container {
+width: min(1100px, calc(100% - 40px));
+margin: auto;
+}
+
+/* ================================
+HEADER
+================================ */
+
+header {
+position: sticky;
+top: 0;
+z-index: 100;
+
+background: rgba(255, 255, 255, 0.9);
+backdrop-filter: blur(12px);
+
+border-bottom: 1px solid var(--border);
+}
+
+.navbar {
+min-height: 70px;
+
+display: flex;
+align-items: center;
+justify-content: space-between;
+
+gap: 20px;
+}
+
+.brand {
+display: flex;
+align-items: center;
+gap: 10px;
+
+font-size: 1.3rem;
+font-weight: 800;
+}
+
+/* ================================
+LOGO NOVA
+================================ */
+
+.nova-logo {
+width: 42px;
+height: 42px;
+
+border-radius: 13px;
+
+display: grid;
+place-items: center;
+
+background: linear-gradient(
+135deg,
+#635bff,
+#8b5cf6
+);
+
+color: white;
+
+font-size: 22px;
+font-weight: 900;
+
+box-shadow:
+0 8px 20px rgba(99, 91, 255, 0.25);
+}
+
+nav {
+display: flex;
+gap: 24px;
+
+color: var(--secondary);
+font-size: 0.95rem;
+font-weight: 600;
+}
+
+nav a {
+transition: 0.2s;
+}
+
+nav a:hover {
+color: var(--primary);
+}
+
+/* ================================
+HERO
+================================ */
+
+.hero {
+min-height: 650px;
+
+display: flex;
+align-items: center;
+justify-content: center;
+
+text-align: center;
+
+padding: 100px 0;
+
+background:
+radial-gradient(
+circle at 20% 20%,
+rgba(99, 91, 255, 0.14),
+transparent 30%
+),
+radial-gradient(
+circle at 80% 10%,
+rgba(139, 92, 246, 0.13),
+transparent 30%
+);
+}
+
+.badge {
+display: inline-block;
+
+padding: 7px 14px;
+
+border-radius: 999px;
+
+background: white;
+border: 1px solid #dddffb;
+
+color: var(--primary);
+
+font-size: 0.9rem;
+font-weight: 700;
+
+margin-bottom: 22px;
+}
+
+h1 {
+font-size: clamp(3rem, 8vw, 6rem);
+
+line-height: 0.95;
+
+letter-spacing: -4px;
+
+margin-bottom: 25px;
+}
+
+.gradient {
+background: linear-gradient(
+90deg,
+#635bff,
+#8b5cf6
+);
+
+-webkit-background-clip: text;
+background-clip: text;
+
+color: transparent;
+}
+
+.hero-text {
+max-width: 680px;
+
+margin: auto;
+
+color: var(--secondary);
+
+font-size: 1.15rem;
+}
+
+.buttons {
+display: flex;
+
+justify-content: center;
+
+flex-wrap: wrap;
+
+gap: 12px;
+
+margin-top: 30px;
+}
+
+.button {
+padding: 12px 21px;
+
+border-radius: 11px;
+
+border: 1px solid var(--border);
+
+background: white;
+
+font-weight: 750;
+
+transition: 0.2s;
+}
+
+.button:hover {
+transform: translateY(-2px);
+}
+
+.button.primary {
+background: var(--primary);
+border-color: var(--primary);
+
+color: white;
+
+box-shadow:
+0 8px 22px rgba(99, 91, 255, 0.25);
+}
+
+.button.primary:hover {
+background: var(--primary-dark);
+}
+
+/* ================================
+SECTIONS
+================================ */
+
+section {
+padding: 85px 0;
+}
+
+.section-title {
+text-align: center;
+
+margin-bottom: 45px;
+}
+
+.section-title h2 {
+font-size: 2.4rem;
+
+margin-bottom: 8px;
+}
+
+.section-title p {
+color: var(--secondary);
+}
+
+/* ================================
+FEATURES
+================================ */
+
+.grid {
+display: grid;
+
+grid-template-columns:
+repeat(3, 1fr);
+
+gap: 20px;
+}
+
+.card {
+background: var(--surface);
+
+border: 1px solid var(--border);
+
+border-radius: 18px;
+
+padding: 27px;
+
+box-shadow:
+0 12px 35px rgba(38, 52, 92, 0.08);
+
+transition: 0.2s;
+}
+
+.card:hover {
+transform: translateY(-4px);
+}
+
+.icon {
+font-size: 2rem;
+
+margin-bottom: 12px;
+}
+
+.card h3 {
+margin-bottom: 8px;
+}
+
+.card p {
+color: var(--secondary);
+}
+
+/* ================================
+CODE
+================================ */
+
+.code-section {
+background: var(--dark);
+
+color: white;
+}
+
+.code-section .section-title p {
+color: #aeb7ce;
+}
+
+.code-box {
+max-width: 750px;
+
+margin: auto;
+
+background: #181c2b;
+
+border: 1px solid #2c3246;
+
+border-radius: 18px;
+
+overflow: hidden;
+
+box-shadow:
+0 20px 50px rgba(0, 0, 0, 0.25);
+}
+
+.code-header {
+padding: 13px 17px;
+
+border-bottom: 1px solid #2c3246;
+
+color: #7e879f;
+
+font-size: 13px;
+}
+
+.dots {
+letter-spacing: 4px;
+}
+
+pre {
+margin: 0;
+
+padding: 28px;
+
+overflow-x: auto;
+
+font-family:
+"Cascadia Code",
+Consolas,
+monospace;
+
+font-size: 1rem;
+}
+
+.command {
+color: #a78bfa;
+}
+
+.string {
+color: #86efac;
+}
+
+/* ================================
+VERSION
+================================ */
+
+.version-box {
+max-width: 700px;
+
+margin: auto;
+
+text-align: center;
+
+background: white;
+
+border: 1px solid var(--border);
+
+border-radius: 18px;
+
+padding: 35px;
+
+box-shadow:
+0 12px 35px rgba(38, 52, 92, 0.08);
+}
+
+.version-number {
+font-size: 2.3rem;
+
+font-weight: 850;
+
+color: var(--primary);
+
+margin-bottom: 5px;
+}
+
+.version-box p {
+color: var(--secondary);
+}
+
+.coming {
+margin-top: 18px;
+
+font-weight: 700;
+}
+
+/* ================================
+ABOUT
+================================ */
+
+.about-box {
+max-width: 800px;
+
+margin: auto;
+
+background: white;
+
+border: 1px solid var(--border);
+
+border-radius: 18px;
+
+padding: 30px;
+
+box-shadow:
+0 12px 35px rgba(38, 52, 92, 0.08);
+
+text-align: center;
+}
+
+.about-box p {
+color: var(--secondary);
+}
+
+/* ================================
+FOOTER
+================================ */
+
+footer {
+background: white;
+
+border-top: 1px solid var(--border);
+
+padding: 35px 0;
+
+text-align: center;
+
+color: var(--secondary);
+}
+
+/* ================================
+MOBILE
+================================ */
+
+@media (max-width: 800px) {
+
+.container {
+width: min(
+100% - 28px,
+600px
+);
+}
+
+nav {
+display: none;
+}
+
+.hero {
+min-height: 570px;
+
+padding: 75px 0;
+}
+
+h1 {
+font-size: clamp(
+3rem,
+17vw,
+5rem
+);
+
+letter-spacing: -2px;
+}
+
+.hero-text {
+font-size: 1rem;
+}
+
+section {
+padding: 65px 0;
+}
+
+.grid {
+grid-template-columns: 1fr;
+}
+
+.section-title h2 {
+font-size: 2rem;
+}
+}
+
+@media (max-width: 430px) {
+
+.navbar {
+min-height: 62px;
+}
+
+.nova-logo {
+width: 38px;
+height: 38px;
+}
+
+.brand {
+font-size: 1.15rem;
+}
+
+.buttons {
+flex-direction: column;
+}
+
+.button {
+width: 100%;
+}
+
+.code-box {
+border-radius: 13px;
+}
+
+pre {
+padding: 22px;
+
+font-size: 0.9rem;
+}
+}
+</style>
+</head>
+
+<body>
+
+<!-- ================================
+HEADER
+================================ -->
+
+<header>
+<div class="container navbar">
+
+<a href="#" class="brand">
+
+<div class="nova-logo">
+N
+</div>
+
+<span>Nova</span>
+
+</a>
+
+<nav>
+
+<a href="#features">
+Fonctionnalités
+</a>
+
+<a href="#code">
+Code
+</a>
+
+<a href="#version">
+Version
+</a>
+
+<a href="#about">
+À propos
+</a>
+
+</nav>
+
+</div>
+</header>
+
+<main>
+
+<!-- ================================
+HERO
+================================ -->
+
+<section class="hero">
+
+<div class="container">
+
+<div class="badge">
+🚀 Nova 0.2 arrive bientôt
+</div>
+
+<h1>
+Programmez avec
+<span class="gradient">
+Nova.
+</span>
+</h1>
+
+<p class="hero-text">
+Un langage de programmation
+simple, lisible et accessible.
+Nova permet de créer des programmes
+sans se perdre dans une syntaxe compliquée.
+</p>
+
+<div class="buttons">
+
+<a
+href="#code"
+class="button primary"
+>
+Découvrir Nova
+</a>
+
+<a
+href="#version"
+class="button"
+>
+Voir la version
+</a>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- ================================
+FEATURES
+================================ -->
+
+<section id="features">
+
+<div class="container">
+
+<div class="section-title">
+
+<h2>
+Pourquoi Nova ?
+</h2>
+
+<p>
+Une syntaxe pensée pour rester simple.
+</p>
+
+</div>
+
+<div class="grid">
+
+<article class="card">
+
+<div class="icon">
+✨
+</div>
+
+<h3>
+Simple
+</h3>
+
+<p>
+Des commandes faciles à comprendre,
+même lorsqu'on débute en programmation.
+</p>
+
+</article>
+
+<article class="card">
+
+<div class="icon">
+📖
+</div>
+
+<h3>
+Lisible
+</h3>
+
+<p>
+Le code Nova est conçu pour être
+compréhensible dès sa lecture.
+</p>
+
+</article>
+
+<article class="card">
+
+<div class="icon">
+🧩
+</div>
+
+<h3>
+Évolutif
+</h3>
+
+<p>
+Nova commence simplement et évolue
+progressivement avec de nouvelles fonctionnalités.
+</p>
+
+</article>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- ================================
+CODE
+================================ -->
+
+<section
+id="code"
+class="code-section"
+>
+
+<div class="container">
+
+<div class="section-title">
+
+<h2>
+Votre premier programme
+</h2>
+
+<p>
+Pas besoin de 12 lignes pour dire bonjour.
+</p>
+
+</div>
+
+<div class="code-box">
+
+<div class="code-header">
+<span class="dots">
+● ● ●
+</span>
+</div>
+
+<pre><code><span class="command">say:</span> <span class="string">"Hello world"</span></code></pre>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- ================================
+VERSION
+================================ -->
+
+<section id="version">
+
+<div class="container">
+
+<div class="section-title">
+
+<h2>
+État du projet
+</h2>
+
+<p>
+Nova évolue version après version.
+</p>
+
+</div>
+
+<div class="version-box">
+
+<div class="version-number">
+Nova 0.1
+</div>
+
+<p>
+Première version fonctionnelle
+</p>
+
+<div class="coming">
+🚀 Nova 0.2 arrive bientôt
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- ================================
+ABOUT
+================================ -->
+
+<section id="about">
+
+<div class="container">
+
+<div class="section-title">
+
+<h2>
+À propos de Nova
+</h2>
+
+<p>
+Un projet qui commence petit.
+</p>
+
+</div>
+
+<div class="about-box">
+
+<p>
+Nova est un langage de programmation
+créé pour être simple, lisible et accessible.
+Son objectif n'est pas de remplacer Python
+ou les autres grands langages, mais de proposer
+une expérience de programmation claire et agréable.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+</main>
+
+<!-- ================================
+FOOTER
+================================ -->
+
+<footer>
+
+<div class="container">
+
+Nova © 2026
+<br>
+
+<small>
+Langage de programmation • Nova 0.1
+</small>
+
+</div>
+
+</footer>
+
+</body>
+</html>
